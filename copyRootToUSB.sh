@@ -44,15 +44,17 @@ if [ "$DESTINATION_TARGET" = "" ] ; then
          echo "Unable to find mounted volume: ""$VOLUME_LABEL"
          exit 1
       else
+        echo "Device Path: "$DEVICE_PATH
         DESTINATION_TARGET=$(findmnt -rno TARGET "$DEVICE_PATH")
+        echo "Destination Target: "$DESTINATION_TARGET
         if [ "$DESTINATION_TARGET" = "" ] ; then
           echo "Unable to find the mount point of: ""$VOLUME_LABEL"
          exit 1
         fi
       fi
    fi
-
+fi
 echo "Target: "$DESTINATION_TARGET
-sudo apt -y install rsync
+sudo apt-get install rsync -y 
 sudo rsync -axHAWX --numeric-ids --info=progress2 --exclude=/proc / "$DESTINATION_TARGET"
 

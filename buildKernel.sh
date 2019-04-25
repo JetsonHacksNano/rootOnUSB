@@ -77,7 +77,7 @@ if [ -d "$BUILD_REPOSITORY" ] ; then
    echo "buildModules and Kernel previously installed"
 else
    echo "Installing buildModulesAndKernel"
-   git clone https://github.com/jetsonhacksnano/"$BUILD_REPOSITORY" "$BUILD_REPOSITORY"
+   git clone https://github.com/jetsonhacksnano/buildKernelAndModules "$BUILD_REPOSITORY"
 fi
 
 # Check to see if source tree is already installed
