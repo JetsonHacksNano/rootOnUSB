@@ -8,4 +8,5 @@ cp /lib/firmware/tegra21x_xusb_firmware ./firmware/
 # CONFIG_EXTRA_FIRMWARE="tegra21x_xusb_firmware"
 FIRMWARE_NAME="tegra21x_xusb_firmware"
 bash scripts/config --file .config \
-	--set-str CONFIG_EXTRA_FIRMWARE "$FIRMWARE_NAME"
+	--set-str CONFIG_EXTRA_FIRMWARE "$FIRMWARE_NAME" \
+        --set-str CONFIG_EXTRA_FIRMWARE_DIR "firmware"
