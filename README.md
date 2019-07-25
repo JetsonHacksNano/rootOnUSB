@@ -29,6 +29,13 @@ The fourth step modifies the file /boot/extlinux/extlinux.conf An entry should b
 
 <h2>Release Notes</h2>
 
+<h3>July, 2019</h3>
+
+* Initial Release
+* Jetson Nano
+* L4T 32.2 (JetPack 4.2.1)
+* Linux kernel 4.9.140
+
 <h3>April, 2019</h3>
 
 * Initial Release
