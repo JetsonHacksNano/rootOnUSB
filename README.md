@@ -27,14 +27,6 @@ The fourth step modifies the file /boot/extlinux/extlinux.conf An entry should b
 
 Also, there is a convenience file: diskUUID.sh which will determine the UUID of a given device. This is useful for example to determine the UUID of the USB drive.
 
-
-<h2>Release Notes</h2>
-<h3>September, 2019</h4>
-* Jetson Nano
-* L4T 32.2.2 (JetPack 4.2.2)
-* Linux kernel 4.9.140
-* Change from recompiling kernel to include the tegra-xusb driver, to adding the tegra-xusb to initramfs. This allows access to the usb driver early on in the boot process.
-
 ```
 $ ./diskUUID.sh
 ```
@@ -45,6 +37,14 @@ While this defaults to sda1 (/dev/sda1), you can also determine other drive UUID
 $ ./diskUUID.sh -d sdb1
 ```
 You may find this information useful for setting up the extlinux.conf file
+
+<h2>Release Notes</h2>
+<h3>September, 2019</h4>
+* Jetson Nano
+* L4T 32.2.2 (JetPack 4.2.2)
+* Linux kernel 4.9.140
+* Change from recompiling kernel to include the tegra-xusb driver, to adding the tegra-xusb to initramfs. This allows access to the usb driver early on in the boot process.
+
 
 <h3>July, 2019</h3>
 
