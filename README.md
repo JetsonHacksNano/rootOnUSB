@@ -40,6 +40,7 @@ You may find this information useful for setting up the extlinux.conf file
 
 <h2>Release Notes</h2>
 <h3>September, 2019</h4>
+
 * Jetson Nano
 * L4T 32.2.2 (JetPack 4.2.2)
 * Linux kernel 4.9.140
