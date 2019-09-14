@@ -50,7 +50,7 @@ APPEND ${cbootargs} root=LABEL=JetsonNanoSSD500 rootwait rootfstype=ext4
 APPEND ${cbootargs} root=/dev/sda1 rootwait rootfstype=ext4
   ```
 
-The first entry is most specific, the last most generic. Note that you are not guaranteed that a USB device is enumerated in a certain order and will always have the save device path. That is, if you leave another USB drive plugged in along with your root disk, the root disk may have a different path such as /dev/sdb1.  
+The first entry is most specific, the last most generic. Note that you are not guaranteed that a USB device is enumerated in a certain order and will always have the same device path. That is, if you leave another USB drive plugged in along with your root disk when you boot the Jetson, the root disk may have a different path than originally, such as /dev/sdb1.  
 
 Also, there is a convenience file: diskUUID.sh which will determine the UUID of a given device. This is useful for example to determine the UUID of the USB drive. Note: If the UUID returned is not similar in length to the above example, then it is likely that the device is not formatted as ext4.
 
