@@ -11,7 +11,7 @@ $ ./addUSBToInitramfs.sh
 
 The second step does not have representation here. The user must prepare a USB drive (preferably USB 3.0, SSD, HDD, or SATA->USB) by formatting the disk as ext4 with a partition. It is easier if you only plug in one USB drive during this procedure. When finished, the disk should show as /dev/sda1 or similar. Typically it is easiest to set the volume label for later use.
 
-The third step, copyRootToUSB copies the contents of the entire system micro SD card to the USB drive. Naturally, the USB drive storage should be larger than the micro SD card. In order to copyRootToUSB:
+The third step, copyRootToUSB copies the contents of the entire system micro SD card to the USB drive. Naturally, the USB drive storage should be larger than the micro SD card. Make sure that the USB drive is mounted before running the script. In order to copyRootToUSB:
 
 ```
 usage: ./copyRootToUSB.sh [directory | [-d directory ] | [-v volume_label ] | [-h]]
