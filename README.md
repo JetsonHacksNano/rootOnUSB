@@ -3,15 +3,19 @@ Set rootfs to be on a USB drive
 
 <em><b>WARNING: </b>This is a low level system change. You may have issues which are not easily solved. You should do this working on a freshly flashed micro SD card, and certainly do not attempt this with valuable data on the card itself. Assume that if this does not work, you may have to flash the micro SD card again. A serial debug console is useful if things go wrong. </em>
 
-The scripts in this repository will setup a NVIDIA Jetson Nano Developer Kit to set the rootfs to a USB drive. This involves four steps. The first step build the initramfs with USB support, so that USB is available early in the boot process. A convenience script named addUSBToInitramfs.sh provides this functionality.
+The scripts in this repository will setup a NVIDIA Jetson Nano Developer Kit to set the rootfs to a USB drive. This involves four steps. 
+## Step 1
+Build the initramfs with USB support, so that USB is available early in the boot process. A convenience script named addUSBToInitramfs.sh provides this functionality.
 
 ```
 $ ./addUSBToInitramfs.sh
 ```
 
+## Step 2
 The second step does not have representation here. The user must prepare a USB drive (preferably USB 3.0, SSD, HDD, or SATA->USB) by formatting the disk as ext4 with a partition. It is easier if you only plug in one USB drive during this procedure. When finished, the disk should show as /dev/sda1 or similar. Note: Make sure that the partition is ext4, as NTSF will appear to copy correctly but cause issues later on. Typically it is easiest to set the volume label for later use during this process.
 
-The third step, copyRootToUSB copies the contents of the entire system micro SD card to the USB drive. Naturally, the USB drive storage should be larger than the micro SD card. Make sure that the USB drive is mounted before running the script. In order to copyRootToUSB:
+## Step 3
+Copy the application area of the micro SD card to the USB drive. copyRootToUSB.sh copies the contents of the entire system micro SD card to the USB drive. Naturally, the USB drive storage should be larger than the micro SD card. Note: Make sure that the USB drive is mounted before running the script. In order to copyRootToUSB:
 
 ```
 usage: ./copyRootToUSB.sh [OPTIONS]
@@ -25,7 +29,8 @@ usage: ./copyRootToUSB.sh [OPTIONS]
   -h | --help  This message
   ```
 
-The fourth step modifies the file /boot/extlinux/extlinux.conf An entry should be added to point to the new rootfs (typically this is /dev/sda1). There is a sample configuration file: sample-extlinux.conf
+## Step 4
+Modify the /boot/extlinux/extlinux.conf file. An entry should be added to point to the new rootfs (typically this is /dev/sda1). There is a sample configuration file: sample-extlinux.conf
 
 You should make a backup of the original extlinux.conf file. Also, when you edit the file you should make a backup of the original configuration and relabel the backup. This will allow you to access an alternate boot method from the serial console in case something goes sideways.
 
