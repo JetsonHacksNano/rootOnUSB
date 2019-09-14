@@ -31,15 +31,19 @@ You should make a backup of the original extlinux.conf file. Also, when you edit
 
 Then you should changed the INITRD line to:
 
+  ```
 INITRD /boot/initrd-xusb.img
+```
 
 So that the system uses the initramfs that we built that includes the USB firmware. Then set the root to the USB drive.
 
 Here are some examples. You can set the drive by the UUID of the disk drive, the volume label of the drive, or the device path:
 
+```
 APPEND ${cbootargs} root=UUID=0e437280-bea0-42a2-967f-a240dd3075eb rootwait rootfstype=ext4
 APPEND ${cbootargs} root=LABEL=JetsonNanoSSD500 rootwait rootfstype=ext4
 APPEND ${cbootargs} root=/dev/sda1 rootwait rootfstype=ext4
+  ```
 
 The first entry is most specific, the last most generic. Note that you are not guaranteed that a USB device is enumerated in a certain order and will always have the save device path. That is, if you leave another USB drive plugged in along with your root disk, the root disk may have a different path such as /dev/sdb1.  
 
