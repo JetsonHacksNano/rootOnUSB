@@ -14,11 +14,13 @@ The second step does not have representation here. The user must prepare a USB d
 The third step, copyRootToUSB copies the contents of the entire system micro SD card to the USB drive. Naturally, the USB drive storage should be larger than the micro SD card. Make sure that the USB drive is mounted before running the script. In order to copyRootToUSB:
 
 ```
-usage: ./copyRootToUSB.sh [directory | [-d directory ] | [-v volume_label ] | [-h]]
+usage: ./copyRootToUSB.sh [OPTIONS]
 
   -d | --directory     Directory path to parent of kernel
 
   -v | --volume_label  Label of Volume to lookup
+
+  -p | --path          Device Path to USB drive (e.g. /dev/sda1)
 
   -h | --help  This message
   ```
