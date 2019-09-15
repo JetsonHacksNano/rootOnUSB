@@ -3,7 +3,7 @@ Set rootfs to be on a USB drive
 
 <em><b>WARNING: </b>This is a low level system change. You may have issues which are not easily solved. You should do this working on a freshly flashed micro SD card, and certainly do not attempt this with valuable data on the card itself. Assume that if this does not work, you may have to flash the micro SD card again. A serial debug console is useful if things go wrong. </em>
 
-The scripts in this repository will setup a NVIDIA Jetson Nano Developer Kit to set the rootfs to a USB drive. This involves four steps. 
+The scripts in this repository will setup a NVIDIA Jetson Nano Developer Kit to set the rootfs to a USB drive. This involves four steps. <em><b>NOTE: </b>This procedure is significantly different than the previous release of this repository. This version does not require the kernel to be recompiled, saving about 40 minutes of install time.</em>
 ## Step 1
 Build the initramfs with USB support, so that USB is available early in the boot process. A convenience script named addUSBToInitramfs.sh provides this functionality.
 
