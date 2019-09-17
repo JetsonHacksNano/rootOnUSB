@@ -13,7 +13,7 @@ function usage
 # Iterate through command line inputs
 while [ "$1" != "" ]; do
     case $1 in
-        -d | --diisk )      shift
+        -d | --disk )      shift
 				DISK_TARGET=$1
                                 ;;
         -h | --help )           usage
